@@ -21,6 +21,10 @@ public class CalculatorTest {
 
             System.out.print("Do you want to continue calculating? [yes/no]: ");
             String userAnswer = scanner.nextLine();
+            while (!userAnswer.equals("yes") && !userAnswer.equals("no")) {
+                System.out.print("I don't understand. Do you want to continue calculating? [yes/no]: ");
+                userAnswer = scanner.nextLine();
+            }
 
             if (!userAnswer.equals("yes")) {
                 break;
