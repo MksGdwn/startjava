@@ -1,9 +1,5 @@
 public class Calculator {
-    public static void main(String[] args) {
-        int a = 10;
-        int b = 2;
-        String operation = "+";
-
+    public void calculate(int a, int b, String operation) {
         switch(operation) {
             case "+":
                 System.out.println(a + b);
