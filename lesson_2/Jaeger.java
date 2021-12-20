@@ -6,6 +6,22 @@ public class Jaeger{
     int strength;
     int armor;
 
+    public Jaeger() {}
+
+    public Jaeger(String modelName,
+            String mark,
+            float height,
+            float weight,
+            int strength,
+            int armor) {
+        this.modelName = modelName;
+        this.mark = mark;
+        this.height = height;
+        this.weight = weight;
+        this.strength = strength;
+        this.armor = armor;
+    }
+
     public String getModelName() {
         return this.modelName;
     }
