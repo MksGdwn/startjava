@@ -1,3 +1,5 @@
+package com.startjava.lesson_1.calculator;
+
 public class Calculator {
     public void calculate(int a, int b, String operation) {
         switch(operation) {
