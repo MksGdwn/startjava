@@ -7,8 +7,6 @@ public class Person {
 	double weight = 90;
 	int age = 30;
 
-	//идти, сидеть, бежать, говорить, учить Java
-
 	public String walk() {
 		return name + " is walking";
 	}
