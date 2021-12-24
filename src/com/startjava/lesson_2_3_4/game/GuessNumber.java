@@ -32,6 +32,10 @@ public class GuessNumber {
         players[index++] = player;
     }
 
+    public Player[] getPlayers() {
+        return players;
+    }
+
     public void play() {
         number = createRandomInteger();
         Scanner scanner = new Scanner(System.in);
@@ -57,6 +61,7 @@ public class GuessNumber {
                 System.out.println("Player " + player.getName() +
                         " guessed the number " + number +
                         " on " + player.getIndex() + " tries");
+                player.addWin();
                 break;
             }
             else if (playerNumber > number) {

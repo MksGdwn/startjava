@@ -4,6 +4,7 @@ public class Player {
     private String name;
     private int[] playerNumbers = new int[10];
     private byte index;
+    private int winCount = 0;
 
     public Player(String name) {
         this.name = name;
@@ -44,5 +45,13 @@ public class Player {
 
     public void setIndex(byte index) {
         this.index = index;
+    }
+
+    public int getWinCount() {
+        return winCount;
+    }
+
+    public void addWin() {
+        winCount++;
     }
 }
