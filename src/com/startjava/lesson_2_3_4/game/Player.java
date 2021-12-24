@@ -1,10 +1,9 @@
-package com.startjava.lesson_2_3.game;
+package com.startjava.lesson_2_3_4.game;
 
 public class Player {
-    private static int count = 1;
-
     private String name;
-    private int number = count++;
+    private int[] playerNumbers = new int[10];
+    private byte index;
 
     public Player(String name) {
         this.name = name;
@@ -14,7 +13,36 @@ public class Player {
         return this.name;
     }
 
-    public int getNumber() {
-        return this.number;
+    public int[] getPlayerNumbers() {
+        return playerNumbers;
+    }
+
+    public boolean addNumber(int number) {
+        if (number >= 0 && number <= 100) {
+            this.playerNumbers[index++] = number;
+            return true;
+        }
+        return false;
+    }
+
+    public String printPlayerNumbers() {
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int number : playerNumbers) {
+            if (number == 0) {
+                break;
+            }
+            else {
+                stringBuilder.append(number).append(" ");
+            }
+        }
+        return String.valueOf(stringBuilder);
+    }
+
+    public byte getIndex() {
+        return index;
+    }
+
+    public void setIndex(byte index) {
+        this.index = index;
     }
 }

@@ -1,20 +1,19 @@
-package com.startjava.lesson_2_3.game;
+package com.startjava.lesson_2_3_4.game;
 
-import java.util.Random;
 import java.util.Scanner;
 
 public class GuessNumberTest {
+    public static Scanner scanner = new Scanner(System.in);
+
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        GuessNumber game = new GuessNumber();
 
-        System.out.println("Enter first player name: ");
-        Player player1 = new Player(scanner.nextLine());
+        for (int i = 0; i < 3; i++) {
+            addPlayerInGame(game);
+        }
 
-        System.out.println("Enter second player name: ");
-        Player player2 = new Player(scanner.nextLine());
-
-        GuessNumber game = new GuessNumber(player1, player2);
         while(true) {
+            System.out.println("Each player has 10 tries");
             game.play();
 
             System.out.print("Do you want to start a new game? [yes/no]: ");
@@ -28,5 +27,10 @@ public class GuessNumberTest {
                 break;
             } 
         }
+    }
+
+    public static void addPlayerInGame(GuessNumber game) {
+        System.out.println("Enter player name: ");
+        game.addPlayer(new Player(scanner.nextLine()));
     }
 }
