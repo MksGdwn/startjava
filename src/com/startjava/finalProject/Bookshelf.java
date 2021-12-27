@@ -20,18 +20,20 @@ public class Bookshelf {
     public void printBookshelf() {
         for (Book book : bookshelf) {
             if (book == null) {
-                System.out.println("[ ]");
+                System.out.print("[ ]");
             }
             else {
-                System.out.println("[K]");
+                System.out.print("[K]");
             }
         }
+        System.out.println();
     }
 
     public void addBook(Book book) {
         for (int i = 0; i < bookshelf.length; i++) {
             if (bookshelf[i] == null) {
                 bookshelf[i] = book;
+                booksCount++;
                 return;
             }
         }
@@ -41,7 +43,26 @@ public class Bookshelf {
         for (int i = 0; i < bookshelf.length; i++) {
             if (book.equals(bookshelf[i])) {
                 bookshelf[i] = null;
+                booksCount--;
             }
         }
+    }
+
+    public void findBook(Book book) {
+        for (Book obj : bookshelf) {
+            if(obj == null) {
+                continue;
+            }
+            if (obj.getTitle().equals(book.getTitle())) {
+                System.out.println(book);
+                return;
+            }
+        }
+
+        System.out.println("Book with the title " + book.getTitle() + " not found.");
+    }
+
+    public int getFreeSpace() {
+        return getBookshelf().length - getBooksCount();
     }
 }
