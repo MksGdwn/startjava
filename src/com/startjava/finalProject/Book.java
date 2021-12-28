@@ -38,6 +38,14 @@ public class Book {
     }
 
     @Override
+    public String toString() {
+        return "Book:\n" +
+                "Author: '" + author + "'\n" +
+                "Title: '" + title + "'\n" +
+                "Publication year: " + publicationYear;
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
